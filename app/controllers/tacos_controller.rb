@@ -5,6 +5,7 @@ class TacosController < ApplicationController
   # GET /tacos.json
   def index
     @tacos = Taco.all
+      render json: @tacos
   end
 
   # GET /tacos/1
