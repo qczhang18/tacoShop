@@ -1,0 +1,37 @@
+<%= form_with(model: taco, local: true) do |form| %>
+  <% if taco.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(taco.errors.count, "error") %> prohibited this taco from being saved:</h2>
+
+      <ul>
+      <% taco.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :meat %>
+    <%= form.text_field :meat, id: :taco_meat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rice %>
+    <%= form.check_box :rice, id: :taco_rice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salsa %>
+    <%= form.check_box :salsa, id: :taco_salsa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, id: :taco_notes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
