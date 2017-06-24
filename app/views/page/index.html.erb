@@ -31,6 +31,9 @@
         <label class="radio-inline">
           <input type="radio" name="meat" value="steak" ng-model="tc.newTaco.meat"> Steak
         </label>
+        <label class="radio-inline">
+          <input type="radio" name="meat" value="lamb" ng-model="tc.newTaco.meat"> Lamb 
+        </label>
       </div>
 
       <label>Sides</label>
@@ -40,6 +43,9 @@
         </label>
         <label class="checkbox-inline">
           <input type="checkbox" ng-model="tc.newTaco.salsa"> Salsa
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" ng-model="tc.newTaco.pepper"> Pepper
         </label>
       </div>
 
@@ -63,6 +69,7 @@
         <th>Meat</th>
         <th>Rice</th>
         <th>Salsa</th>
+        <th>Pepper</th>
         <th>Notes</th>
         <th></th>
       </tr>
@@ -73,6 +80,7 @@
         <td class="meat">{{taco.meat}}</td>
         <td class="rice">{{taco.rice ? 'yes' : 'no'}}</td>
         <td class="salsa">{{taco.salsa ? 'yes' : 'no'}}</td>
+        <td class="pepper">{{taco.pepper ? 'yes' : 'no'}}</td>
         <td>{{taco.notes}}</td>
         <td><button type="button" class="btn btn-danger btn-xs fa fa-times" title="Delete this Taco" ng-click="tc.deleteTaco(taco)"></button></td>
       </tr>
@@ -89,7 +97,8 @@
 
   table.tacos td.meat,
   table.tacos td.rice,
-  table.tacos td.salsa {
+  table.tacos td.salsa,
+  table.tacos td.pepper {
     text-transform: capitalize;
   }
 </style>
@@ -143,6 +152,7 @@
       meat: 'chicken',
       rice: false,
       salsa: false,
+      pepper: false,
       notes: ''
     };
     tc.newTaco = _.clone(defaultTaco);

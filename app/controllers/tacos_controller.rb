@@ -70,6 +70,6 @@ class TacosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def taco_params
-      params.require(:taco).permit(:meat, :rice, :salsa, :notes)
+      params.require(:taco).permit(:meat, :rice, :salsa, :pepper, :notes)
     end
 end
